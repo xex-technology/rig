@@ -1,14 +1,13 @@
-import config from '../config.json';
-
 function Login() {
+
     const handleClick = () => {
-          const sender = document.getElementById("username").value;
-          fetch('../config.json', {
-            method: 'POST',
-            body: JSON.stringify({
-                sender: sender
+          fetch("http://localhost:3000/src/config.json")
+            .then(function (response) {
+                return response.json();
             })
-          })
+            .then(function (data) {
+                console.log(data);
+            })
         }
 
     return (

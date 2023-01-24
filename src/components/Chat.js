@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Message from './Message';
+import config from '../config.json';
 
 function Chat() {
 
@@ -9,7 +10,6 @@ function Chat() {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages', {
             method: 'POST',
             body: JSON.stringify({
-                Sender: process.env.sender,
                 Message: document.getElementById("message-box").value
             })
         })
@@ -32,8 +32,8 @@ function Chat() {
         getMessages()
     },[])
     
-    const listMessages = message.map((item, index) => 
-        <Message key={index} sender={item.sender.S} message={item.message.S}></Message>
+    const listMessages = message.map((item, x) => 
+        <Message key={x} sender={item.sender.S} message={item.message.S}></Message>
     )
 
     return (
