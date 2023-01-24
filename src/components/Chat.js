@@ -4,8 +4,15 @@ import Message from './Message';
 function Chat() {
 
     const [message, setMessage] = useState([]);
+
     const postMessages = () => {
-        alert("To be implemented. Button clicked.")
+        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages', {
+            method: 'POST',
+            body: JSON.stringify({
+                Sender: process.env.sender,
+                Message: document.getElementById("message-box").value
+            })
+        })
     }
 
     const getMessages = () => {
@@ -33,7 +40,7 @@ function Chat() {
         <div className="chat-list">
             {message && listMessages}
 
-            <textarea placeholder="Type something here"></textarea>
+            <input type="text" id="message-box" placeholder="Type something here"></input>
             <button type="button" onClick={postMessages}>Send</button>
         </div>
         
