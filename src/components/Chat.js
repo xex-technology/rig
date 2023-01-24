@@ -4,6 +4,9 @@ import Message from './Message';
 function Chat() {
 
     const [message, setMessage] = useState([]);
+    const postMessages = () => {
+        alert("To be implemented. Button clicked.")
+    }
 
     const getMessages = () => {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages')
@@ -21,12 +24,17 @@ function Chat() {
     useEffect(()=>{
         getMessages()
     },[])
+    
+    const listMessages = message.map((item, index) => 
+        <Message key={index} sender={item.sender.S} message={item.message.S}></Message>
+    )
 
     return (
         <div className="chat-list">
-            {message && message.map((item, index) => 
-                <Message key={index} sender={item.sender} message={item.message}></Message>
-            )}
+            {message && listMessages}
+
+            <textarea placeholder="Type something here"></textarea>
+            <button type="button" onClick={postMessages}>Send</button>
         </div>
         
     );

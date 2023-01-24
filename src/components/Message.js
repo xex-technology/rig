@@ -1,12 +1,14 @@
 function Message(props) {
-    <div className="chat">
-        <div className="message-sender">
-            {props.sender}
+    return (
+        <div className="chat">
+            <div className="message-sender">
+                <p>{props.sender}</p>
+            </div>
+            <div className="message-body">
+                <p>{props.message}</p>
+            </div>
         </div>
-        <div className="message-body">
-            {props.message}
-        </div>
-    </div>
+    );   
 }
 
 export default Message;
