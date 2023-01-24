@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Chat from './components/Chat';
+import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
-      <Chat />
+      <Login />
     </div>
   );
 }
