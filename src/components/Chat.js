@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Message from './Message';
-import config from '../config.json';
 
 function Chat() {
 
@@ -13,6 +12,9 @@ function Chat() {
                 Message: document.getElementById("message-box").value
             })
         })
+        setTimeout(function() {
+            window.location.reload();
+        }, 1500)
     }
 
     const getMessages = () => {
@@ -38,10 +40,12 @@ function Chat() {
 
     return (
         <div className="chat-list">
+            <h3 className="messages-heading">👋 Hello</h3>
             {message && listMessages}
-
-            <input type="text" id="message-box" placeholder="Type something here"></input>
-            <button type="button" onClick={postMessages}>Send</button>
+            <div className="send-dialog">
+                <input type="text" className="message-box" id="message-box" placeholder="Type something here"></input>
+                <button class="btn btn-secondary" type="button" onClick={postMessages}>Send</button>
+            </div> 
         </div>
         
     );

@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.chat-list {
+  display: block;
+}
 
 .chat {
   display:flex;
@@ -19,12 +22,32 @@ code {
   width:20%;
   padding:10px;
   text-align:center;
+  border-radius:20px;
+  margin:10px;
 }
 
 .message-sender {
+  display:flex;
   font-size:12px;
 }
 
 .message-body {
+  display:flex;
   padding:10px;
+}
+
+.messages-heading {
+  display:flex;
+  padding:7px;
+}
+
+.send-dialog {
+  display: flex;
+  position:fixed;
+  right:0;
+  top:0;
+}
+
+.message-box {
+  width:400px;
 }
