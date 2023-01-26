@@ -1,21 +1,9 @@
 import { useState, useEffect } from 'react';
 import Message from './Message';
 
-function Chat() {
+function Chat(props) {
 
     const [message, setMessage] = useState([]);
-
-    const postMessages = () => {
-        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages', {
-            method: 'POST',
-            body: JSON.stringify({
-                Message: document.getElementById("message-box").value
-            })
-        })
-        setTimeout(function() {
-            window.location.reload();
-        }, 1500)
-    }
 
     const getMessages = () => {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages')
@@ -35,8 +23,21 @@ function Chat() {
     },[])
     
     const listMessages = message.map((item, x) => 
-        <Message key={x} sender={item.sender.S} message={item.message.S}></Message>
+        <Message key={x} sender={item.from.S} message={item.message.S}></Message>
     )
+    const postMessages = () => {
+        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages', {
+            method: 'POST',
+            body: JSON.stringify({
+                Id: (message.length++).toString(),
+                From: props.username,
+                Message: document.getElementById("message-box").value
+            })
+        })
+        setTimeout(function() {
+            window.location.reload();
+        }, 1500)
+    }
 
     return (
         <div className="chat-list">
