@@ -1,6 +1,10 @@
-import App from '../App';
+import { useState } from 'react';
+import Chat from './Chat';
 
 function Login() {
+    const [success, setSuccess] = useState(false);
+    const [login, showLogin] = useState(true);
+    
     const logOn = () => {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login', {
             method: 'POST',
@@ -10,15 +14,13 @@ function Login() {
             })
         }).then((res) => {
             if(res.ok) {
-                
-                    <App success={true} username={document.getElementById("username").value}/>
-                
-                
+                showLogin(false);
+                setSuccess(true);
             }
         })
     }
 
-    return (
+    const loginForm = (
         <div className="login-main">
             <h3>Welcome to <strong>Rig</strong>!</h3>
             <p>Please sign in below to get talking:</p>
@@ -30,7 +32,14 @@ function Login() {
             <div className="copyright">
                 &copy; Dylan Armstrong 2023
             </div>
-        </div>   
+        </div>
+    )
+
+    return (
+         <div>
+            {login && loginForm}
+            {success && <Chat username={document.getElementById("username").value} /> }
+         </div>  
     );
 }
 

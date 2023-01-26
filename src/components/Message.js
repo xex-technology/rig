@@ -2,7 +2,7 @@ function Message(props) {
     return (
         <div className="chat">
             <div className="message-sender">
-                <p>{props.sender}</p>
+                <p><strong>{props.sender}</strong> says...</p>
             </div>
             <div className="message-body">
                 <p>{props.message}</p>
