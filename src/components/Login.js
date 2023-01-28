@@ -4,7 +4,7 @@ import Chat from './Chat';
 function Login() {
     const [success, setSuccess] = useState(false);
     const [login, showLogin] = useState(true);
-    
+
     const logOn = () => {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login', {
             method: 'POST',
@@ -19,7 +19,6 @@ function Login() {
             }
         })
     }
-
     const loginForm = (
         <div className="login-main">
             <h3>Welcome to <strong>Rig</strong>!</h3>
