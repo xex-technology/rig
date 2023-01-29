@@ -9,11 +9,6 @@ function Login() {
         fetch('https://api.rig.dylanarmstrong.net/dev/login', {
             method: 'POST',
             mode: 'cors',
-            headers: {
-                "Access-Control-Allow-Headers" : 'Content-Type',
-                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
-                "Access-Control-Allow-Methods": "POST, OPTIONS",
-            },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value
