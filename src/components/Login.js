@@ -10,7 +10,6 @@ function Login() {
             method: 'POST',
             mode: 'cors',
             headers: {
-                "Access-Control-Allow-Origin" : 'https://rig.dylanarmstrong.net',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
