@@ -12,6 +12,7 @@ function Channel(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
                 Id: (message.length++).toString(),
                 From: props.sender,
                 To: props.receiver,
@@ -26,7 +27,10 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({
+                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
+            })
         })
          .then((res) => res.json())
          .then((data) => {
