@@ -8,6 +8,12 @@ function Login() {
     const logOn = () => {
         fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login', {
             method: 'POST',
+            mode: 'cors',
+            headers: {
+                "Access-Control-Allow-Headers" : 'Content-Type',
+                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+            },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value

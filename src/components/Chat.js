@@ -6,7 +6,15 @@ function Chat(props) {
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getUsers = () => {
-        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login')
+        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                "Access-Control-Allow-Headers" : 'Content-Type',
+                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+            }
+        })
          .then((res) => res.json())
          .then((data) => {
             setFriends(data.Items);
