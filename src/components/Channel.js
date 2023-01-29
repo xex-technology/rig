@@ -5,13 +5,11 @@ function Channel(props) {
     const [message, setMessage] = useState([]);
 
     const postMessages = () => {
-        fetch('https://api.rig.dylanarmstrong.net/dev/messages', {
+        fetch('https://api.rig.dylanarmstrong.net/messages', {
             method: 'POST',
             mode: 'cors',
             headers: {
-                "Access-Control-Allow-Headers" : 'Content-Type',
-                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
-                "Access-Control-Allow-Methods": "POST, OPTIONS",
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 Id: (message.length++).toString(),
@@ -23,13 +21,11 @@ function Channel(props) {
     }
 
     const getMessages = () => {
-        fetch('https://api.rig.dylanarmstrong.net/dev/messages', {
+        fetch('https://api.rig.dylanarmstrong.net/messages', {
             method: 'GET',
             mode: 'cors',
             headers: {
-                "Access-Control-Allow-Headers" : 'Content-Type',
-                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
-                "Access-Control-Allow-Methods": "GET, OPTIONS",
+                'Content-Type': 'application/json'
             },
         })
          .then((res) => res.json())

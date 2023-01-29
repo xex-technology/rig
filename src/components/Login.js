@@ -6,7 +6,7 @@ function Login() {
     const [login, showLogin] = useState(true);
 
     const logOn = () => {
-        fetch('https://api.rig.dylanarmstrong.net/dev/login', {
+        fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'POST',
             mode: 'cors',
             headers: {

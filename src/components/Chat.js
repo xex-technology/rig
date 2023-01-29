@@ -6,14 +6,12 @@ function Chat(props) {
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getUsers = () => {
-        fetch('https://api.rig.dylanarmstrong.net/dev/login', {
+        fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'GET',
             mode: 'cors',
             headers: {
-                "Access-Control-Allow-Headers" : 'Content-Type',
-                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
-                "Access-Control-Allow-Methods": "GET, OPTIONS",
-            }
+                'Content-Type': 'application/json'
+            },
         })
          .then((res) => res.json())
          .then((data) => {
