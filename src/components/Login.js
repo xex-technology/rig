@@ -12,7 +12,7 @@ function Login() {
             headers: {
                 "Access-Control-Allow-Headers" : 'Content-Type',
                 "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
-                "Access-Control-Allow-Methods": "GET, OPTIONS",
+                "Access-Control-Allow-Methods": "POST, OPTIONS",
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,

@@ -7,6 +7,12 @@ function Channel(props) {
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/dev/messages', {
             method: 'POST',
+            mode: 'cors',
+            headers: {
+                "Access-Control-Allow-Headers" : 'Content-Type',
+                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
+                "Access-Control-Allow-Methods": "POST, OPTIONS",
+            },
             body: JSON.stringify({
                 Id: (message.length++).toString(),
                 From: props.sender,
@@ -17,7 +23,15 @@ function Channel(props) {
     }
 
     const getMessages = () => {
-        fetch('https://api.rig.dylanarmstrong.net/dev/messages')
+        fetch('https://api.rig.dylanarmstrong.net/dev/messages', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                "Access-Control-Allow-Headers" : 'Content-Type',
+                "Access-Control-Allow-Origin": "https://rig.dylanarmstrong.net",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+            },
+        })
          .then((res) => res.json())
          .then((data) => {
             setMessage(data.Items.sort((a,b) => Number(a.id.N) - Number(b.id.N)));
