@@ -27,10 +27,7 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
-            })
+            }
         })
          .then((res) => res.json())
          .then((data) => {
