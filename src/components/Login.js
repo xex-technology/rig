@@ -9,6 +9,9 @@ function Login() {
         fetch('https://api.rig.dylanarmstrong.net/dev/login', {
             method: 'POST',
             mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value
