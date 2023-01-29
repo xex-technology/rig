@@ -4,7 +4,7 @@ import Chat from './Chat';
 function Login() {
     const [success, setSuccess] = useState(false);
     const [login, showLogin] = useState(true);
-    
+
     const logOn = () => {
         fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'POST',
@@ -14,8 +14,7 @@ function Login() {
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
-                password: document.getElementById("password").value,
-                apiKey: 'z8YahbPOCv4UpILCbbcno4NBnVRHlKF59FhmdCf5'
+                password: document.getElementById("password").value
             })
         }).then((res) => {
             if(res.ok) {
