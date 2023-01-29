@@ -5,7 +5,7 @@ function Channel(props) {
     const [message, setMessage] = useState([]);
 
     const postMessages = () => {
-        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages', {
+        fetch('https://api.rig.dylanarmstrong.net/dev/messages', {
             method: 'POST',
             body: JSON.stringify({
                 Id: (message.length++).toString(),
@@ -17,7 +17,7 @@ function Channel(props) {
     }
 
     const getMessages = () => {
-        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/messages')
+        fetch('https://api.rig.dylanarmstrong.net/dev/messages')
          .then((res) => res.json())
          .then((data) => {
             setMessage(data.Items.sort((a,b) => Number(a.id.N) - Number(b.id.N)));

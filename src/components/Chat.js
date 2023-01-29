@@ -6,7 +6,7 @@ function Chat(props) {
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getUsers = () => {
-        fetch('https://mcrzg3eay0.execute-api.ap-southeast-2.amazonaws.com/dev/login', {
+        fetch('https://api.rig.dylanarmstrong.net/dev/login', {
             method: 'GET',
             mode: 'cors',
             headers: {
