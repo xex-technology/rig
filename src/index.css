@@ -1,86 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.chat-list {
+  width:100%;
+  height:100%;
+  left:0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.send-dialog {
+  position:fixed;
+  width:100px;
+  bottom:0;
+  border-radius:5px;
 }
-.chat-list {
-  display: block;
+
+.message-box {
+  position:fixed;
+  left:101px;
+  width:250px;
+  bottom:0;
+  border-radius:5px;
+}
+
+.messages-heading {
+  position:fixed;
+  margin:10px;
+  padding:10px;
+  right:0;
+}
+
+.channel-heading {
+  position:fixed;
+  margin:10px;
+  padding:10px;
+  top:50px;
+  right:0;
 }
 
 .chat {
   display:block;
-  align-items: center;
   background-color:black;
-  width:20%;
-  padding:5px;
-  text-align:center;
-
+  border-radius:20px;
+  text-align:left;
   margin:10px;
-}
-
-.message-sender {
-  display:flex;
-  font-size:15px;
-}
-
-.message-body {
-  display:flex;
-}
-
-.messages-heading {
-  display:flex;
-  padding:7px;
-}
-
-.send-dialog {
-  display: block;
-  align-items: center;
-  position:fixed;
-  width:20%;
-  left:0;
-  bottom:0;
-}
-
-.message-box {
-  width:100%;
-  height:auto;
-  margin:10px;
-}
-
-.login-main{
-  position: fixed;
-  left:0;
-  width:35%;
-  height:100%;
-  background-color: black;
-}
-
-#button-logon {
-  padding:10px;
-  margin:5px;
-}
-
-.copyright {
-  position: fixed;
-  right:0;
-  bottom:0;
   padding:5px;
-}
-#username {
-  margin:3px;
-}
-#password {
-  margin:3px;
-}
-h3 {
-  padding:5px;
-  margin:5px;
+  width:250px;
+  height:75;
 }
