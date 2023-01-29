@@ -13,7 +13,7 @@ function Login() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                key: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
+                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value
             })
