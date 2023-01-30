@@ -13,7 +13,6 @@ function Channel(props) {
                 'X-API-Key': 'z8YahbPOCv4UpILCbbcno4NBnVRHlKF59FhmdCf5'
             },
             body: JSON.stringify({
-                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
                 Id: (message.length++).toString(),
                 From: props.sender,
                 To: props.receiver,
