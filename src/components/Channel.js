@@ -26,7 +26,8 @@ function Channel(props) {
             method: 'GET',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-API-Key': 'z8YahbPOCv4UpILCbbcno4NBnVRHlKF59FhmdCf5'
             }
         })
          .then((res) => res.json())
