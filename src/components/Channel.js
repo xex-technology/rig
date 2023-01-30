@@ -38,7 +38,7 @@ function Channel(props) {
     useEffect(()=>{
         const interval = setInterval(() => {
             getMessages() 
-        }, 100);
+        }, 1);
         return () => clearInterval(interval);
     },[])
 
@@ -56,7 +56,7 @@ function Channel(props) {
             }
             else if(props.receiver === item.to.S && props.sender === item.from.S) {
                 return (
-                    <Message style="background-color:darkgray;" key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
+                    <Message key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
                 )
             }
         }
