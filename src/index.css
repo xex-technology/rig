@@ -27,14 +27,6 @@
   right:0;
 }
 
-.channel-heading {
-  position:fixed;
-  margin:10px;
-  padding:10px;
-  top:50px;
-  right:0;
-}
-
 .chat {
   display:block;
   background-color:black;

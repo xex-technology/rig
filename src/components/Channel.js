@@ -56,7 +56,7 @@ function Channel(props) {
             }
             else if(props.receiver === item.to.S && props.sender === item.from.S) {
                 return (
-                    <Message key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
+                    <Message style="background-color:darkgray;" key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
                 )
             }
         }
@@ -65,7 +65,6 @@ function Channel(props) {
 
     return (
         <div className="channel">
-            <h5 className="channel-heading">DMs to {props.receiver}</h5>
             {message && listMessages}
             <input type="text" onKeyDown={handleKeyDown} className="message-box" id="message-box" placeholder="Type something here"></input>
         </div>
