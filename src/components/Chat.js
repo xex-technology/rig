@@ -39,9 +39,7 @@ function Chat(props) {
             <div className="send-dialog">
                 <p>Send to</p>
                 <select id="send-to">
-                    <div className="friends-list">
-                        {friends && listUsers}
-                    </div>
+                    {friends && listUsers}
                 </select>
             </div> 
         </div>
