@@ -43,10 +43,14 @@ function Channel(props) {
         return () => clearInterval(interval);
     },[])
 
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+    },[message])
+
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
           postMessages();
-          document.getElementById("message-box").value = 0;
+          document.getElementById("message-box").value = "";
         }
       };
 
@@ -68,6 +72,7 @@ function Channel(props) {
     return (
         <div className="channel">
             {message && listMessages}
+            <div ref={bottomRef}></div>
             <input type="text" class="form-control" onKeyDown={handleKeyDown} id="message-box" placeholder="Type something here"></input>
         </div>
     )
