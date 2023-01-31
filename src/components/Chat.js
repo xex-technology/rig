@@ -20,31 +20,6 @@ function Chat(props) {
             setSelectedUser(true);
         });    
     }
-
-    
-
-    const listFriends = () => {
-        return (
-            <div>
-              {friends.map((item, index) => {
-                return (
-                    <div>
-                    {item.friends.map((friend, index) => {
-                      return (
-                        <div key={index}>
-                          <option value={friend.SS}>{friend.SS}</option>
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
-            </div>
-        );      
-    }
-
-        
-    
     
     useEffect(() => {
         const interval = setInterval(() => {
@@ -52,6 +27,16 @@ function Chat(props) {
         }, 1000);
         return () => clearInterval(interval);
     },[])
+
+    const listFriends = friends.map((friend, idx) => {
+        if(props.username === friend.username.S) {
+            return (
+                <option key={idx}>{friend.friends.SS}</option>
+            )
+        }
+    })
+        
+    
 
     return (
         <div className="chat-list">
@@ -69,8 +54,8 @@ function Chat(props) {
                 <select class="form-select" id="send-to">
                     {friends && listFriends}
                 </select>
+                {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
             </div> 
-            {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
         </div>
     );
 }
