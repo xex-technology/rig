@@ -1,7 +1,7 @@
 function Message(props) {
     return (
         <div className="chat">
-            <div class="card">
+            <div class="shadow card">
                 <div class="card-header">
                     <strong>{props.sender}</strong>
                 </div>
