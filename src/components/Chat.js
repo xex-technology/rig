@@ -6,23 +6,26 @@ function Chat(props) {
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getFriends = () => {
-        fetch('https://api.rig.dylanarmstrong.net/login', {
-            method: 'GET',
+        fetch('https://api.rig.dylanarmstrong.net/messages', {
+            method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'X-API-Key': process.env.REACT_APP_API_KEY
-            }
+            },
+            body: JSON.stringify({
+                username: props.username,
+            })
         })
          .then((res) => res.json())
          .then((data) => {
-            setFriends(data.Items.friends);
+            setFriends(data.Items);
             setSelectedUser(true);
         });    
     }
 
     const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.S}>{item.S}</option>
+        <option key={i} value={item.username.S}>{item.username.S}</option>
     )
 
     useEffect(() => {
