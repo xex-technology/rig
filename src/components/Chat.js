@@ -5,6 +5,8 @@ function Chat(props) {
     const [friends, setFriends] = useState([]);
     const [selectedUser, setSelectedUser] = useState(false);
 
+    const username = props.username;
+
     const getFriends = () => {
         fetch('https://api.rig.dylanarmstrong.net/friends', {
             method: 'GET',
@@ -22,7 +24,7 @@ function Chat(props) {
     }
 
     const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.username.friends.SS}>{item.username.friends.SS}</option>
+        <option key={i} value={item.username.friends.S}>{item.username.friends.S}</option>
     )
 
     useEffect(() => {
