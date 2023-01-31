@@ -41,12 +41,9 @@ function Channel(props) {
         const interval = setInterval(() => {
             getMessages() 
         }, 1000);
+        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
         return () => clearInterval(interval);
     },[])
-
-    useEffect(()=> {
-        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
-    },[]);
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
