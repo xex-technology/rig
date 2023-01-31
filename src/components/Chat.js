@@ -38,7 +38,7 @@ function Chat(props) {
             {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
             <div className="send-dialog">
                 <p>Send to</p>
-                <select id="send-to">
+                <select class="form-select" id="send-to">
                     {friends && listUsers}
                 </select>
             </div> 
