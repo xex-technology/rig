@@ -3,17 +3,16 @@
   width:100px;
   bottom:0;
   border-radius:5px;
-  margin:10px;
-  left: 60%;
-  transform: translate(-50%);
+  margin:5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #message-box {
   position:fixed;
-  left:45%;
+  left:101px;
   width:250px;
   bottom:0;
-  margin:10px;
   border-radius:5px;
 }
 
