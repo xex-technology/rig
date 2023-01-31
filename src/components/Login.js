@@ -12,7 +12,7 @@ function Login() {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.API_KEY;
+                'X-API-Key': process.env.API_KEY
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
