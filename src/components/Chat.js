@@ -7,15 +7,12 @@ function Chat(props) {
 
     const getFriends = () => {
         fetch('https://api.rig.dylanarmstrong.net/friends', {
-            method: 'POST',
+            method: 'GET',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'X-API-Key': process.env.REACT_APP_API_KEY
             },
-            body: JSON.stringify({
-                username: props.username,
-            })
         })
          .then((res) => res.json())
          .then((data) => {
@@ -25,7 +22,7 @@ function Chat(props) {
     }
 
     const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.username.S}>{item.username.S}</option>
+        <option key={i} value={item.username.friends.SS}>{item.username.friends.SS}</option>
     )
 
     useEffect(() => {
