@@ -4,7 +4,7 @@ import Message from './Message';
 function Channel(props) {
     const [message, setMessage] = useState([]);
     const bottomRef = useRef(null);
-    
+
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/messages', {
             method: 'POST',
@@ -46,7 +46,7 @@ function Channel(props) {
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({behavior: 'smooth'});
-    },[message])
+    })
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
