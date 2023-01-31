@@ -34,7 +34,15 @@ function Chat(props) {
 
     return (
         <div className="chat-list">
-            <h3 className="messages-heading">{props.username}</h3>
+            <div class="shadow card" id="navbar">
+                <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
+                <br></br>
+                <button id="settings" class="btn btn-dark" type="button">Friends</button>
+                <br></br>
+                <button id="logoff" class="btn btn-dark" type="button">Settings</button>
+                <br></br>
+                <button id="logoff" class="btn btn-dark" type="button">Logoff</button>
+            </div>
             {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
             <div className="send-dialog">
                 <p>Send to</p>

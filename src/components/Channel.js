@@ -46,6 +46,7 @@ function Channel(props) {
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
           postMessages();
+          document.getElementById("message-box").value = 0;
         }
       };
 
