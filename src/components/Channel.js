@@ -39,7 +39,7 @@ function Channel(props) {
     useEffect(()=>{
         const interval = setInterval(() => {
             getMessages() 
-        }, 10);
+        }, 1000);
         return () => clearInterval(interval);
     },[])
 

@@ -28,7 +28,7 @@ function Chat(props) {
     useEffect(() => {
         const interval = setInterval(() => {
             getUsers() 
-        }, 10);
+        }, 1000);
         return () => clearInterval(interval);
     },[])
 
