@@ -32,7 +32,7 @@ function Login() {
                 <div className="card-body">
                     <input placeholder="Username" type="text" id="username"></input>
                     <input placeholder="Password" type="password" id="password"></input>
-            
+                    <br></br>
                     <button id="button-logon" class="btn btn-dark" type="button" onClick={logOn}>Go</button>
                     <div className="copyright">
                         &copy; Dylan Armstrong 2023
