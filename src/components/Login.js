@@ -4,7 +4,6 @@ import Chat from './Chat';
 function Login() {
     const [success, setSuccess] = useState(false);
     const [login, showLogin] = useState(true);
-    require('dotenv').config();
 
     const logOn = () => {
         fetch('https://api.rig.dylanarmstrong.net/login', {
@@ -12,7 +11,7 @@ function Login() {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,

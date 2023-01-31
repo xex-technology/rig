@@ -4,15 +4,14 @@ import Channel from './Channel';
 function Chat(props) {
     const [friends, setFriends] = useState([]);
     const [selectedUser, setSelectedUser] = useState(false);
-    require('dotenv').config();
-    
+
     const getUsers = () => {
         fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'GET',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             }
         })
          .then((res) => res.json())

@@ -3,7 +3,6 @@ import Message from './Message';
 
 function Channel(props) {
     const [message, setMessage] = useState([]);
-    require('dotenv').config();
 
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/messages', {
@@ -11,7 +10,7 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             },
             body: JSON.stringify({
                 Id: (message.length++).toString(),
