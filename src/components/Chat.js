@@ -29,7 +29,7 @@ function Chat(props) {
               {friends.map((item, index) => {
                 return (
                     <div>
-                    {friends.friends.map((friend, index) => {
+                    {item.friends.map((friend, index) => {
                       return (
                         <div key={index}>
                           <option value={friend.SS}>{friend.SS}</option>
