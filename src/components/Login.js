@@ -27,7 +27,7 @@ function Login() {
     const loginForm = (
         <div className="login-main">
             <div class="shadow card">
-            <h3 class="card-header">Welcome to <strong>Rig</strong>!</h3>
+            <h3 class="card-header">Welcome to <strong>Rig</strong></h3>
             <p>Please sign in below to get talking:</p>
                 <div className="card-body">
                     <input placeholder="Username" type="text" id="username"></input>
