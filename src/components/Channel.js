@@ -1,9 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Message from './Message';
 
 function Channel(props) {
     const [message, setMessage] = useState([]);
-    const bottomRef = useRef(null);
 
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/messages', {
@@ -41,7 +40,6 @@ function Channel(props) {
         const interval = setInterval(() => {
             getMessages() 
         }, 1000);
-        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
         return () => clearInterval(interval);
     },[])
 
@@ -70,7 +68,6 @@ function Channel(props) {
     return (
         <div className="channel">
             {message && listMessages}
-            <div ref={bottomRef}></div>
             <input type="text" class="form-control" onKeyDown={handleKeyDown} id="message-box" placeholder="Type something here"></input>
         </div>
     )
