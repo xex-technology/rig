@@ -37,7 +37,10 @@ function Channel(props) {
     }
 
     useEffect(()=>{
-        getMessages() 
+        const interval = setInterval(() => {
+            getMessages() 
+        }, 10);
+        return () => clearInterval(interval);
     },[])
 
     const handleKeyDown = (event) => {
