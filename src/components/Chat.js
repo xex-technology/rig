@@ -6,7 +6,7 @@ function Chat(props) {
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getFriends = () => {
-        fetch('https://api.rig.dylanarmstrong.net/messages', {
+        fetch('https://api.rig.dylanarmstrong.net/friends', {
             method: 'POST',
             mode: 'cors',
             headers: {
