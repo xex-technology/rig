@@ -24,7 +24,7 @@ function Chat(props) {
     }
 
     const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.username.friends.S}>{item.username.friends.S}</option>
+        <option key={i} value={item.friends.S}>{item.friends.S}</option>
     )
 
     useEffect(() => {
