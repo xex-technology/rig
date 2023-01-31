@@ -4,6 +4,8 @@ import Message from './Message';
 function Channel(props) {
     const [message, setMessage] = useState([]);
     const bottomRef = useRef(null);
+    
+    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
 
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/messages', {
@@ -43,10 +45,6 @@ function Channel(props) {
         }, 1000);
         return () => clearInterval(interval);
     },[])
-
-    useEffect(() => {
-        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
-    })
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
