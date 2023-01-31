@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Message from './Message';
 
 function Channel(props) {
     const [message, setMessage] = useState([]);
-
+    const bottomRef = useRef(null);
+    
     const postMessages = () => {
         fetch('https://api.rig.dylanarmstrong.net/messages', {
             method: 'POST',
