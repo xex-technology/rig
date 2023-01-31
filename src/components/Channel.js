@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import Message from './Message';
 
-// Test comment
-
 function Channel(props) {
     const [message, setMessage] = useState([]);
 

@@ -5,7 +5,7 @@ function Chat(props) {
     const [friends, setFriends] = useState([]);
     const [selectedUser, setSelectedUser] = useState(false);
 
-    const getUsers = () => {
+    const getFriends = () => {
         fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'GET',
             mode: 'cors',
@@ -21,13 +21,13 @@ function Chat(props) {
         });    
     }
 
-    const listUsers = friends.map((item, i) => 
-        <option key={i} value={item.username.S}>{item.username.S}</option>
+    const listFriends = friends.map((item, i) => 
+        <option key={i} value={item.friends.S}>{item.friends.S}</option>
     )
 
     useEffect(() => {
         const interval = setInterval(() => {
-            getUsers() 
+            getFriends() 
         }, 1000);
         return () => clearInterval(interval);
     },[])
@@ -47,7 +47,7 @@ function Chat(props) {
             <div className="send-dialog">
                 <p>Send to</p>
                 <select class="form-select" id="send-to">
-                    {friends && listUsers}
+                    {friends && listFriends}
                 </select>
             </div> 
         </div>
