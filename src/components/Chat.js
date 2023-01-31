@@ -16,13 +16,13 @@ function Chat(props) {
         })
          .then((res) => res.json())
          .then((data) => {
-            setFriends(data.Items);
+            setFriends(data.Items.friends);
             setSelectedUser(true);
         });    
     }
 
     const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.friends.S}>{item.friends.S}</option>
+        <option key={i} value={item.S}>{item.S}</option>
     )
 
     useEffect(() => {
