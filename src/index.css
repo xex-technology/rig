@@ -12,7 +12,7 @@
   border-radius:5px;
 }
 
-.message-box {
+#message-box {
   position:fixed;
   left:101px;
   width:250px;
