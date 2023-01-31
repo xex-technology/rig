@@ -14,7 +14,6 @@ function Login() {
                 'X-API-Key': 'z8YahbPOCv4UpILCbbcno4NBnVRHlKF59FhmdCf5'
             },
             body: JSON.stringify({
-                secret: 'FGutewAx2bqZU#qncK@2EDTj@bE^NRckqpMDREQYRboz8gExYqS$z2izie#y*9px',
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value
             })
