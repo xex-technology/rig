@@ -5,8 +5,6 @@ function Chat(props) {
     const [friends, setFriends] = useState([]);
     const [selectedUser, setSelectedUser] = useState(false);
 
-    const username = props.username;
-
     const getFriends = () => {
         fetch('https://api.rig.dylanarmstrong.net/friends', {
             method: 'GET',
@@ -23,10 +21,31 @@ function Chat(props) {
         });    
     }
 
-    const listFriends = friends.map((item, i) => 
-        <option key={i} value={item.friends.S}>{item.friends.S}</option>
-    )
+    
 
+    const listFriends = () => {
+        return (
+            <div>
+              {friends.map((item, index) => {
+                return (
+                    <div>
+                    {friends.friends.map((friend, index) => {
+                      return (
+                        <div key={index}>
+                          <option value={friend.SS}>{friend.SS}</option>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+        );      
+    }
+
+        
+    
+    
     useEffect(() => {
         const interval = setInterval(() => {
             getFriends() 
@@ -45,13 +64,13 @@ function Chat(props) {
                 <br></br>
                 <button id="logoff" class="btn btn-dark" type="button">Logoff</button>
             </div>
-            {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
             <div className="send-dialog">
                 <p>Send to</p>
                 <select class="form-select" id="send-to">
                     {friends && listFriends}
                 </select>
             </div> 
+            {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
         </div>
     );
 }
