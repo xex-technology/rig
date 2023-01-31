@@ -26,16 +26,19 @@ function Login() {
     }
     const loginForm = (
         <div className="login-main">
-            <h3>Welcome to <strong>Rig</strong>!</h3>
+            <div class="shadow card">
+            <h3 class="card-header">Welcome to <strong>Rig</strong>!</h3>
             <p>Please sign in below to get talking:</p>
-
-            <input placeholder="Username" type="text" id="username"></input>
-            <input placeholder="Password" type="password" id="password"></input>
-            <br></br>
-            <button id="button-logon" class="btn btn-dark" type="button" onClick={logOn}>Go</button>
-            <div className="copyright">
-                &copy; Dylan Armstrong 2023
-            </div>
+                <div className="card-body">
+                    <input placeholder="Username" type="text" id="username"></input>
+                    <input placeholder="Password" type="password" id="password"></input>
+            
+                    <button id="button-logon" class="btn btn-dark" type="button" onClick={logOn}>Go</button>
+                    <div className="copyright">
+                        &copy; Dylan Armstrong 2023
+                    </div>
+                </div>
+            </div>  
         </div>
     )
 
