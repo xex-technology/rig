@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Channel from './Channel';
 
 function Chat(props) {
-    const [friends, setFriends] = useState([]);
+    const [friend, setFriends] = useState([]);
     const [selectedUser, setSelectedUser] = useState(false);
 
     const getFriends = () => {
@@ -28,15 +28,24 @@ function Chat(props) {
         return () => clearInterval(interval);
     },[])
 
-    const listFriends = friends.map((friend, idx) => {
-        if(props.username === friend.username.S) {
-            friend.map((item, idx) => {
-                return (
-                    <option key={idx} value={item.SS}>{item.SS}</option>
-                )
-            }
-        )}
-    })
+    const listFriends = friend.map((item) => {
+        if(props.username === item.username.S) {
+            return (
+                Object.keys(item.friends).map((key) => {
+                    return (
+                        Object.values(item.friends).map((value) => {
+                            return (
+                                Object.values(value).map((friendName) => {
+                                    return (
+                                        <option key={value[key]} value={friendName}>{friendName}</option>
+                                    )
+                                })         
+                            )    
+                        })      
+                    )
+                })
+            )}
+        })
         
     
 
@@ -55,7 +64,7 @@ function Chat(props) {
                 <p>Send to</p>
             
                 <select class="form-select" id="send-to">
-                    {friends && listFriends}
+                    {friend && listFriends}
                 </select>
             </div> 
             {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
