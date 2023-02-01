@@ -1,7 +1,7 @@
 .send-dialog {
   position:fixed;
   width:100px;
-  bottom:0;
+  top:0;
   border-radius:5px;
   margin:5px;
   left: 0;
