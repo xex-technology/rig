@@ -51,12 +51,12 @@ function Chat(props) {
             </div>
             <div className="send-dialog">
                 <p>Send to</p>
-                
-                {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
+            
                 <select class="form-select" id="send-to">
                     {friends && listFriends}
                 </select>
             </div> 
+            {selectedUser && <Channel sender={props.username} receiver={document.getElementById("send-to").value}></Channel>}
         </div>
     );
 }
