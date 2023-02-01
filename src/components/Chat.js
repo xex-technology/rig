@@ -31,7 +31,7 @@ function Chat(props) {
     const listFriends = friends.map((friend, idx) => {
         if(props.username === friend.username.S) {
             return (
-                <option key={idx}>{friend.friends.SS}</option>
+                <option key={idx} value={friend.friends.SS}>{friend.friends.SS}</option>
             )
         }
     })
@@ -43,11 +43,11 @@ function Chat(props) {
             <div class="shadow card" id="navbar">
                 <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
                 <br></br>
-                <button id="settings" class="btn btn-dark" type="button">Friends</button>
+                <button disabled id="settings" class="btn btn-dark" type="button">Friends</button>
                 <br></br>
-                <button id="logoff" class="btn btn-dark" type="button">Settings</button>
+                <button disabled id="logoff" class="btn btn-dark" type="button">Settings</button>
                 <br></br>
-                <button id="logoff" class="btn btn-dark" type="button">Logoff</button>
+                <button disabled id="logoff" class="btn btn-dark" type="button">Logoff</button>
             </div>
             <div className="send-dialog">
                 <p>Send to</p>
