@@ -30,10 +30,12 @@ function Chat(props) {
 
     const listFriends = friends.map((friend, idx) => {
         if(props.username === friend.username.S) {
-            return (
-                <option key={idx} value={friend.friends.SS}>{friend.friends.SS}</option>
-            )
-        }
+            friend.map((item, idx) => {
+                return (
+                    <option key={idx} value={item.SS}>{item.SS}</option>
+                )
+            }
+        )}
     })
         
     
