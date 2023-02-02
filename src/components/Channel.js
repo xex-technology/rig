@@ -32,7 +32,7 @@ function Channel(props) {
         })
          .then((res) => res.json())
          .then((data) => {
-            setMessage(data.Items.sort((a,b) => Number(a.id.N) - Number(b.id.N)));
+            setMessage(data.Items.sort((a,b) => Number(b.id.N) - Number(a.id.N)));
         });
     }
 
