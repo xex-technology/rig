@@ -47,6 +47,9 @@
   top:0;
   height:93%;
 }
+.messages {
+  height:95%;
+}
 
 .friends-list {
   position:fixed;

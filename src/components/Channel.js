@@ -67,7 +67,9 @@ function Channel(props) {
 
     return (
         <div className="channel">
-            {message && listMessages}
+            <div className="messages"> 
+                {message && listMessages}
+            </div>
             <input type="text" class="form-control" onKeyDown={handleKeyDown} id="message-box" placeholder="Type something here"></input>
         </div>
     )
