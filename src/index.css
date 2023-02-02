@@ -55,6 +55,8 @@
 }
 
 #messages{
+  display: flex;
+  flex-direction: column-reverse;
   position:fixed;
   top:0;
   left:0;
