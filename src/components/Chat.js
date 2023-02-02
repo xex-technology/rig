@@ -53,12 +53,6 @@ function Chat(props) {
         <div className="chat-list">
             <div class="shadow card" id="navbar">
                 <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
-                <br></br>
-                <button disabled id="settings" class="btn btn-dark" type="button">Friends</button>
-                <br></br>
-                <button disabled id="logoff" class="btn btn-dark" type="button">Settings</button>
-                <br></br>
-                <button disabled id="logoff" class="btn btn-dark" type="button">Logoff</button>
             </div>
             <div className="send-dialog">
                 <p>Send to</p>
