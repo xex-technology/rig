@@ -40,6 +40,7 @@
   width:250px;
   left:0;
   top:0;
+  bottom:100px;
 }
 
 .channel {
@@ -47,13 +48,7 @@
   top:0;
   height:93%;
 }
-.messages {
-  position:fixed;
-  height:95%;
-  top:0;
-  left:0;
-  margin:10px;
-}
+
 
 .friends-list {
   position:fixed;
