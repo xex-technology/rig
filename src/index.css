@@ -35,6 +35,7 @@
   display:block;
   border-radius:20px;
   text-align:left;
+  left:0;
   margin:5px;
   padding:5px;
   width:250px;
@@ -47,6 +48,7 @@
   margin:5px;
   padding:5px;
   width:250px;
+  right:0;
 }
 
 .friends-list {
