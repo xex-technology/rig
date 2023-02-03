@@ -53,12 +53,12 @@ function Channel(props) {
     const listMessages = message.map((item, i) => {
         if(props.sender === item.to.S && props.receiver === item.from.S) {
             return (
-                    <Message id="from" key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
+                    <Message key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
                 )
             }
             else if(props.receiver === item.to.S && props.sender === item.from.S) {
                 return (
-                    <Message id="to" key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
+                    <Message key={i} sender={item.from.S} receiver={item.to.S} message={item.message.S}></Message>
                 )
             }
         }

@@ -31,24 +31,13 @@
   top:0;
 }
 
-#from{
+.chat{
   display:block;
   border-radius:20px;
   text-align:left;
-  left:0;
   margin:5px;
   padding:5px;
   width:250px;
-}
-
-#to {
-  display:block;
-  border-radius:20px;
-  text-align:right;
-  margin:5px;
-  padding:5px;
-  width:250px;
-  right:0;
 }
 
 .friends-list {
