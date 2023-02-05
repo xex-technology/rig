@@ -10,7 +10,7 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.secrets.REACT_APP_API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             },
             body: JSON.stringify({
                 Id: (message.length++).toString(),
@@ -27,7 +27,7 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.secrets.REACT_APP_API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             }
         })
          .then((res) => res.json())
