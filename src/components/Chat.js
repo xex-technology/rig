@@ -11,7 +11,7 @@ function Chat(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.secrets.REACT_APP_API_KEY
+                'X-API-Key': process.env.REACT_APP_API_KEY
             },
         })
          .then((res) => res.json())
