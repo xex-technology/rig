@@ -11,7 +11,7 @@ function Chat(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.REACT_APP_API_KEY
+                'X-API-Key': process.env.secrets.REACT_APP_API_KEY
             },
         })
          .then((res) => res.json())
@@ -52,7 +52,7 @@ function Chat(props) {
     return (
         <div className="chat-list">
             <div class="shadow card" id="navbar">
-                <p>Rig {process.env.REACT_APP_VERSION}</p><h5>Hi, {props.username}</h5>
+                <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
             </div>
             <div className="send-dialog">
                 <p>Send to</p>
