@@ -11,7 +11,7 @@ function Login() {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.secrets.REACT_APP_API_KEY
+                'X-API-Key': process.env.secrets
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
