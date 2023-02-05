@@ -55,8 +55,6 @@ function Chat(props) {
                 <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
             </div>
             <div className="send-dialog">
-                <p>Send to</p>
-            
                 <select class="form-select" id="send-to">
                     {friend && listFriends}
                 </select>
