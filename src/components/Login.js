@@ -4,7 +4,7 @@ import Chat from './Chat';
 function Login() {
     const [success, setSuccess] = useState(false);
     const [login, showLogin] = useState(true);
-
+    
     const logOn = () => {
         fetch('https://api.rig.dylanarmstrong.net/login', {
             method: 'POST',
