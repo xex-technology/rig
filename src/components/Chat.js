@@ -52,7 +52,7 @@ function Chat(props) {
     return (
         <div className="chat-list">
             <div class="shadow card" id="navbar">
-                <p>Rig v0.1.0</p><h5>Hi, {props.username}</h5>
+                <p>Rig {process.env.REACT_APP_VERSION}</p><h5>Hi, {props.username}</h5>
             </div>
             <div className="send-dialog">
                 <p>Send to</p>
