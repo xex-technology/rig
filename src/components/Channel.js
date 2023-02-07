@@ -27,7 +27,7 @@ function Channel(props) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key':process.env.REACT_APP_API_KEYY
+                'X-API-Key' : process.env.REACT_APP_API_KEY
             }
         })
          .then((res) => res.json())
