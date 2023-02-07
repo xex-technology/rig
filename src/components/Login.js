@@ -1,7 +1,29 @@
 import { useState } from 'react';
 import Chat from './Chat';
-
+import { SecretsManagerClient, GetSecretValueCommand } from "@aws-sdk/client-secrets-manager";
+  
+  
 function Login() {
+    const secret_name = "/amplify/d3m6ect8gzjb2m/main/api_key";
+  
+    const client = new SecretsManagerClient({
+        region: "ap-southeast-2",
+    });
+  
+    let response;
+  
+    try {
+        response = client.send(
+            new GetSecretValueCommand({
+                SecretId: secret_name,
+                VersionStage: "AWSCURRENT",
+            })
+        );
+    } catch (error) {
+        throw error;
+    }
+  
+    const secret = response.SecretString;
     const [success, setSuccess] = useState(false);
     const [login, showLogin] = useState(true);
     
@@ -11,7 +33,7 @@ function Login() {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-Key': process.env.REACT_APP_API_KEY
+                'X-API-Key': secret
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
