@@ -1,0 +1,7 @@
+node_modules
+build
+src/aws-cloudformation
+src/aws-lambda
+.dockerignore
+Dockerfile
+Dockerfile.prod

@@ -1,0 +1,26 @@
+# Work in progress
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: The Template for the Rig Serverless Infrastructure in CloudFormation
+
+Parameters:
+  APIKey:
+    Type: String
+    Description: Please enter a Rig API Key
+
+Resources:
+  RigFrontend:
+    Type: AWS::Amplify::App
+    Properties: 
+      Description: Rig Frontend in AWS Amplify
+      EnableBranchAutoDeletion: Boolean
+      EnvironmentVariables: 
+        - Name: REACT_APP_API_KEY
+          Value: !Ref APIKey
+      IAMServiceRole: String
+      Name: Rig
+      OauthToken: String
+      Platform: String
+      Repository: https://github.com/xex-technology/rig.git
+      Tags: 
+        - Tag
