@@ -22,5 +22,3 @@ Resources:
       OauthToken: String
       Platform: String
       Repository: https://github.com/xex-technology/rig.git
-      Tags: 
-        - Tag
